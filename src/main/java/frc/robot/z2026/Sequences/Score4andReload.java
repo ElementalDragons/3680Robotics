@@ -41,6 +41,8 @@ public class Score4andReload extends AutoSequence {
     var pose_waypoint2 = new ActionPose(Group.Travel, Location.Waypoint.getValue(), 2, Position.Ground.getValue(), Action.None, null);
     var pose_waypoint3 = new ActionPose(Group.Travel, Location.Waypoint.getValue(), 3, Position.Ground.getValue(), Action.None, null);
     var pose_waypoint4 = new ActionPose(Group.Travel, Location.Waypoint.getValue(), 4, Position.Ground.getValue(), Action.None, null);
+    var pose_waypoint5 = new ActionPose(Group.Score, Location.AdHoc.getValue(), 1, Position.Ground.getValue(), Action.None, null);
+    var pose_waypoint6 = new ActionPose(Group.Score, Location.AdHoc.getValue(), 2, Position.Ground.getValue(), Action.None, null);
     var pose_align4_Hub = new ActionPose(Group.Align, Location.Hub.getValue(), 4, Position.Ground.getValue(), Action.None, null);
     var pose_approach4_Hub = new ActionPose(Group.Approach, Location.Hub.getValue(), 4, Position.Ground.getValue(), Action.Pickup, null);
     var pose_score4_feed = new ActionPose(Group.Score, Location.Hub.getValue(), 4, Position.Ground.getValue(), Action.Feed, null);
@@ -49,6 +51,8 @@ public class Score4andReload extends AutoSequence {
     var pose_pickup1_Outpost = new ActionPose(Group.Pickup, Location.Outpost.getValue(), 1, Position.Ground.getValue(), Action.None, null);
 
     var event_start1 = CreateSyncAwaitEvent("Await Pose Start 1", pose_start1);
+    var event_waypoint5 = CreateSyncAwaitEvent("Await Pose Waypoint 5 Hub", pose_waypoint5);
+    var event_waypoint6 = CreateSyncAwaitEvent("Await Pose Waypoint 6 Hub", pose_waypoint6);
     var event_waypoint4 = CreateSyncAwaitEvent("Await Pose Waypoint 4 Hub", pose_waypoint4);
     var event_waypoint3 = CreateSyncAwaitEvent("Await Pose Waypoint 3 Hub", pose_waypoint3);
     var event_waypoint2 = CreateSyncAwaitEvent("Await Pose Waypoint 2 Hub", pose_waypoint2);
@@ -62,19 +66,21 @@ public class Score4andReload extends AutoSequence {
 
     AutoEventTime event_waitForLoading = new AutoEventTime("Wait For Loading", false, 5000, AutoEvent.EventType.None, autoController);
 
-    BeginWith(event_start1)
-      .Then(event_waypoint4)
-      .Then(event_waypoint3)
-      .Then(event_approach4_Hub)
-      .Then(event_align4_Hub)
+    //BeginWith(event_start1)
+    BeginWith(event_waypoint5)
+    .Then(event_waypoint6)
+      // .Then(event_waypoint4)
+      // .Then(event_waypoint3)
+      // .Then(event_approach4_Hub)
+      // .Then(event_align4_Hub)
       .Then(event_score4_feed)
-      .Then(event_score4_release)
-      .Then(event_waypoint3)
-      .Then(event_waypoint2)
-      .Then(event_waypoint1)
-      .Then(event_align1_Outpost)
-      .Then(event_pickup1_Outpost)
-      .Then(event_waitForLoading);
+      .Then(event_score4_release);
+      // .Then(event_waypoint3)
+      // .Then(event_waypoint2)
+      // .Then(event_waypoint1)
+      // .Then(event_align1_Outpost)
+      // .Then(event_pickup1_Outpost)
+      // .Then(event_waitForLoading);
   }
 
   AutoEventTarget CreateSyncAwaitEvent(String name, ActionPose pose) {

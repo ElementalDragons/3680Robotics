@@ -35,12 +35,6 @@ public class LimeLightPositioner implements Positioner {
     public void Initialize() {
         // IMU mode to 2 only works with LL4 and fusions the provided orientation with the calculated positions
         LimelightHelpers.SetIMUMode("", 0);
-
-        // Make sure you only configure port forwarding once in your robot code.
-        // Do not place these function calls in any periodic functions
-        for (int port = 5800; port <= 5809; port++) {
-            PortForwarder.add(port, "limelight.local", port);
-        };
     }
 
     public Pose3d GetPose() {

@@ -14,6 +14,7 @@ import edu.wpi.first.math.geometry.Rotation3d;
 import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.geometry.Translation3d;
+import edu.wpi.first.net.PortForwarder;
 import edu.wpi.first.networktables.DoubleSubscriber;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.RobotBase;
@@ -60,7 +61,8 @@ public class Robot extends TimedRobot {
   final String codeBuildVersion = "2026.01.22";
   boolean initialized = false;
 
-  final SparkFlex can_drive_lf = new SparkFlex(6, MotorType.kBrushless);
+  // final SparkFlex can_drive_lf = new SparkFlex(6, MotorType.kBrushless);
+  final SparkMax can_drive_lf = null;
   final SparkMax can_steer_lf = new SparkMax(2,MotorType.kBrushless);
 
   final SparkFlex can_drive_rf = new SparkFlex(7, MotorType.kBrushless);
@@ -82,7 +84,7 @@ public class Robot extends TimedRobot {
   final Encoder enc_steer_lr = new REVEncoder(can_steer_lr.getAbsoluteEncoder());
   final Encoder enc_steer_rr = new REVEncoder(can_steer_rr.getAbsoluteEncoder());
 
-  final Encoder enc_drive_lf = new REVEncoder(can_drive_lf.getEncoder());
+  final Encoder enc_drive_lf = null; // new REVEncoder(can_drive_lf.getEncoder());
   final Encoder enc_drive_rf = new REVEncoder(can_drive_rf.getEncoder());
   final Encoder enc_drive_lr = new REVEncoder(can_drive_lr.getEncoder());
   final Encoder enc_drive_rr = new REVEncoder(can_drive_rr.getEncoder());
@@ -100,7 +102,7 @@ public class Robot extends TimedRobot {
   final boolean isFieldOriented = true;
 
   SingleMotorModule shooter_module = new SingleMotorModule("shooter", can_shooter, 1.60, false, null, null, enc_shooter, 1, 0.5, 0, 0, true);
-  SingleMotorModule intake_module = new SingleMotorModule("intake", can_intake, 0.5, false, null, null, null, 1, 0.5, 0, 0, false);
+  SingleMotorModule intake_module = new SingleMotorModule("intake", can_intake, 1.0, false, null, null, null, 1, 0.5, 0, 0, false);
   SingleMotorModule feeder_module = new SingleMotorModule("feeder", can_feeder, 1.60, false, null, null, null, 1, 0.5, 0, 0, false);
   
   // leftFront  software position // potentially should be leftrear   hardware position
@@ -180,6 +182,22 @@ public class Robot extends TimedRobot {
     Dashboard.InitializeChoosers();
     autoModes = AutoModes.Initialize(autoModes, modules);
     currentAutoMode = AutoModes.GetDefault(autoModes);
+
+    
+    // for limelight
+    // // Make sure you only configure port forwarding once in your robot code.
+    // // Do not place these function calls in any periodic functions
+    // for (int port = 5800; port <= 5809; port++) {
+    //     PortForwarder.add(port, "limelight.local", port);
+    // };
+
+    // for photonvision
+    // // Make sure you only configure port forwarding once in your robot code.
+    // // Do not place these function calls in any periodic functions
+    // for (int port = 5800; port <= 5809; port++) {
+        PortForwarder.add(5800, "photonvision.local", 5800);
+    // };
+
   }
 
   void commonInit() {

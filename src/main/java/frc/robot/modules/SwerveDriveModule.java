@@ -164,7 +164,7 @@ public class SwerveDriveModule implements DriveModule {
         forwardPidController = new PIDController(posKp, posKi, posKd);
 
         // bumping this up to 1.0 after adjusting the rotation multiplier from processrotation
-        var rotKp = 1.0;
+        var rotKp = 0.5; // 1.0;
         var rotKi = 0; // rotKp * 0.10;
         var rotKd = 0; //rotKi * 3.0;
         rotationPidController = new PIDController(rotKp, rotKi, rotKd);
@@ -457,16 +457,19 @@ public class SwerveDriveModule implements DriveModule {
         var healthy = false;
 
         if (RobotBase.isReal()) {
-            for (var positioner : positioners) {
-                if (positioner.IsHealthy()) {
-                    healthy = true;
+            // TODO: remove this and make psoitioner enablement an option on the class
+            healthy = true;
+            
+            // for (var positioner : positioners) {
+            //     if (positioner.IsHealthy()) {
+            //         healthy = true;
 
-                    if (debug) {
-                        positionerHealthyEntry.setBoolean(healthy);
-                        positionHealthReasonEntry.setString(positioner.GetHealthReason());
-                    }
-                }
-            }
+            //         if (debug) {
+            //             positionerHealthyEntry.setBoolean(healthy);
+            //             positionHealthReasonEntry.setString(positioner.GetHealthReason());
+            //         }
+            //     }
+            // }
         } else {
             healthy = true;
         }
@@ -587,13 +590,14 @@ public class SwerveDriveModule implements DriveModule {
                 forwardReached = true;
             }
 
-            // if we have a lookat and we've reached our position, don't keep trying to find the lookat
-            if (debug)
-                myTable.getEntry("hasLookAt").setBoolean(pose.HasLookAt);
-            if (pose.HasLookAt && lateralReached && forwardReached) {
-                System.out.printf("%d ms: lookat position reached\n", System.currentTimeMillis());
-                rotationReached = true;
-            }
+            // TODO: Re-evaluate this
+            // // if we have a lookat and we've reached our position, don't keep trying to find the lookat
+            // if (debug)
+            //     myTable.getEntry("hasLookAt").setBoolean(pose.HasLookAt);
+            // if (pose.HasLookAt && lateralReached && forwardReached) {
+            //     System.out.printf("%d ms: lookat position reached\n", System.currentTimeMillis());
+            //     rotationReached = true;
+            // }
 
             // only process rotation if we have a target and haven't already been overridden this tick
             if (!rotationReached && (pose.HasOrientation || pose.HasLookAt || seekTag)) {

@@ -313,7 +313,7 @@ public class SwerveMotorModule {
 
     previousDriveSpeed = motorSpeed;
 
-    if (driveModule.controller.enableDriveTrain && driveModule.controller.enableDrive)
+    if (driveModule.controller.enableDriveTrain && driveModule.controller.enableDrive && driveMotor != null)
       driveMotor.set(motorSpeed);
 
       currentState.speedMetersPerSecond = motorSpeed * driveModule.driveSpeed;

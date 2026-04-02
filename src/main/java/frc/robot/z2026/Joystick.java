@@ -50,8 +50,8 @@ public class Joystick {
     // m_controller.RegisterBinaryButtonConsumer(ButtonName.LeftButton, elevator.AddButtonMappedPose(new ActionPose(Group.Score, Location.Any.getValue(), -1, Position.Lower.getValue(), Action.Any, null)));
     // m_controller.RegisterBinaryButtonConsumer(ButtonName.TopButton, elevator.AddButtonMappedPose(new ActionPose(Group.Score, Location.Any.getValue(), -1, Position.Middle.getValue(), Action.Any, null)));
 
-    // m_controller.RegisterBinaryButtonConsumer(ButtonName.POVDown, elevator::ApplyInverse);
-    // m_controller.RegisterBinaryButtonConsumer(ButtonName.POVUp, elevator::ApplyValue);
+     m_controller.RegisterBinaryButtonConsumer(ButtonName.POVDown, intake::ApplyInverse);
+     m_controller.RegisterBinaryButtonConsumer(ButtonName.POVUp, intake::ApplyValue);
 
     //m_controller.RegisterBinaryButtonConsumer(ButtonName.POVLeft, grabber::ApplyInverse);
     //m_controller.RegisterBinaryButtonConsumer(ButtonName.POVRight, grabber::ApplyValue);
@@ -88,5 +88,7 @@ public class Joystick {
 
     // m_controller.SetValueButtonInversion(ButtonName.Capture, null);
     // m_controller.RegisterValueButtonConsumer(ButtonName.Capture, modules::ProcessCapture);
+
+  
   }
 }

@@ -86,9 +86,9 @@ public class Constants {
     public static final Translation2d blueStartPosition = new Translation2d(startArea.getX() - frameSize.getX(), fieldCenter.getY());
     // 3 ft. 5½ in., 7 ft. ⅜ in., 10 ft. 7⅜ in. (~105 cm, ~214 cm, ~324 cm) from mid field to the center 
     public static final double[] blueStartY = new double[] {
-        Utility.inchesToMeters(127.38),
-        Utility.inchesToMeters(84.03),
-        Utility.inchesToMeters(36.458),
+        Utility.inchesToMeters(10), //127.38),  
+        Utility.inchesToMeters(10), //84.03),
+        Utility.inchesToMeters(10), //36.458),
     };
 
     public static final double waypointOffset = robotSize.getNorm() * 1.25;
@@ -155,19 +155,19 @@ public class Constants {
             case Waypoint:
                 switch (index) {
                     case 1:
-                        selectedLocation = new Translation3d(Utility.inchesToMeters(4.85), Utility.inchesToMeters(78.03), 0);
+                        selectedLocation = new Translation3d(Utility.inchesToMeters(78.03), Utility.inchesToMeters(24.85), 0);
                         break;
                     case 2:
-                        selectedLocation = new Translation3d(Utility.inchesToMeters(98.36), Utility.inchesToMeters(78.03), 0);
+                        selectedLocation = new Translation3d(Utility.inchesToMeters(78.03), Utility.inchesToMeters(98.36), 0);
                         break;
                     case 3:
-                        selectedLocation = new Translation3d(Utility.inchesToMeters(158.32), Utility.inchesToMeters(78.03), 0);
+                        selectedLocation = new Translation3d(Utility.inchesToMeters(78.03), Utility.inchesToMeters(158.32), 0);
                         break;
                     case 4:
-                        selectedLocation = new Translation3d(Utility.inchesToMeters(218.28), Utility.inchesToMeters(78.03), 0);
+                        selectedLocation = new Translation3d(Utility.inchesToMeters(78.03), Utility.inchesToMeters(218.28), 0);
                         break;
                     case 5:
-                        selectedLocation = new Translation3d(Utility.inchesToMeters(311.79), Utility.inchesToMeters(78.03), 0);
+                        selectedLocation = new Translation3d(startArea.getX() - Utility.inchesToMeters(36.0), fieldCenter.getY(), 0); //311.79
                         break;
                     case 6:
                         selectedLocation = new Translation3d(Utility.inchesToMeters(4.85), Utility.inchesToMeters(261.76), 0);
@@ -275,10 +275,16 @@ public class Constants {
                         break;
                 }
                 break;
+            case AdHoc:
+                switch (index) {
+                    case 1:
+                        selectedLocation = new Translation3d(startArea.getX() - Utility.inchesToMeters(36.0), fieldCenter.getY(), 0); //311.79
+                        break;
+                }
+                break;
             case Any:
             case None:
             case Depot:
-            case AdHoc:
             case Bump:
             case Trench:
             default:
