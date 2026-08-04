@@ -28,6 +28,7 @@ public class Joystick {
     var shooter = (SingleMotorModule) modules.GetModule("shooter");
     var feeder = (SingleMotorModule) modules.GetModule("feeder");
     var intake = (SingleMotorModule) modules.GetModule("intake");
+    var agitator = (SingleMotorModule) modules.GetModule("agitator");
     // var shootSequence = buttonMappedAutos.get("spinupAndShoot");
 
     // m_controller.RegisterBinaryButtonConsumer(ButtonName.TopButton, shooter::ApplyValue);
@@ -38,6 +39,9 @@ public class Joystick {
     m_controller.RegisterBinaryButtonConsumer(ButtonName.LeftButton, feeder::ApplyValue);
     m_controller.RegisterBinaryButtonConsumer(ButtonName.RightButton, intake::ApplyValue);
     m_controller.RegisterBinaryButtonConsumer(ButtonName.BottomButton, feeder::ApplyInverse);
+
+    // agitator: simple on/off toggle - press once to start, press again to stop
+    m_controller.RegisterBinaryButtonConsumer(ButtonName.RightShoulderButton, agitator::Toggle);
     // System.out.printf("Joystick: shootSequence %s found for button mapping\n", shootSequence != null ? shootSequence.GetLabel() : "not");
     // if (shootSequence != null) // will be null in Autonomous Mode
     //   m_controller.RegisterBinaryButtonConsumer(ButtonName.RightButton, shootSequence::InitializeViaButton);

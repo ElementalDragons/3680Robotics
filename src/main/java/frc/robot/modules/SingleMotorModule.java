@@ -261,6 +261,26 @@ public class SingleMotorModule implements RobotModule,AutoCloseable {
         }
     }
 
+    // Toggle flips the motor between running at driveSpeed and off on each button press.
+    // Uses rising-edge detection so a single press produces a single toggle.
+    private boolean togglePreviousPressed = false;
+    private boolean toggledOn = false;
+
+    public void Toggle(boolean isPressed) {
+        if (isPressed && !togglePreviousPressed) {
+            toggledOn = !toggledOn;
+
+            // abandon any active target so the toggle fully controls the motor
+            AbandonTarget();
+
+            // sustainedDriveSpeed keeps the motor running across cycles until toggled off
+            sustainedDriveSpeed = toggledOn ? (invert ? -driveSpeed : driveSpeed) : 0.0;
+            currentDriveSpeed = sustainedDriveSpeed;
+            myTable.getEntry("sustainedDriveSpeed").setDouble(sustainedDriveSpeed);
+        }
+        togglePreviousPressed = isPressed;
+    }
+
     public void EvaluateTargetPose() {
         // TODO: detect button input and bypass - how would this ever get set to non-zero at this point?
         if (targetPose != null) { //} && currentDriveSpeed != 0.0) {

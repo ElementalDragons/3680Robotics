@@ -77,6 +77,7 @@ public class Robot extends TimedRobot {
   final SparkMax can_feeder = new SparkMax(12, MotorType.kBrushed);
   final SparkMax can_shooter = new SparkMax(11, MotorType.kBrushless);
   final SparkMax can_intake = new SparkMax(10, MotorType.kBrushless);
+  final SparkMax can_agitator = new SparkMax(13, MotorType.kBrushed);
 
   // need to change to absolute encoder for steering
   final Encoder enc_steer_lf = new REVEncoder(can_steer_lf.getAbsoluteEncoder());
@@ -104,6 +105,7 @@ public class Robot extends TimedRobot {
   SingleMotorModule shooter_module = new SingleMotorModule("shooter", can_shooter, 1.60, false, null, null, enc_shooter, 1, 0.5, 0, 0, true);
   SingleMotorModule intake_module = new SingleMotorModule("intake", can_intake, 1.0, false, null, null, null, 1, 0.5, 0, 0, false);
   SingleMotorModule feeder_module = new SingleMotorModule("feeder", can_feeder, 1.60, false, null, null, null, 1, 0.5, 0, 0, false);
+  SingleMotorModule agitator_module = new SingleMotorModule("agitator", can_agitator, 1.0, false, null, null, null, 1, 0.5, 0, 0, false);
   
   // leftFront  software position // potentially should be leftrear   hardware position
   SwerveMotorDefinition leftFrontDef = new SwerveMotorDefinition(can_drive_lf, enc_drive_lf, can_steer_lf, enc_steer_lf);
@@ -171,7 +173,8 @@ public class Robot extends TimedRobot {
     modules.AddModule(shooter_module);
     modules.AddModule(intake_module);
     modules.AddModule(feeder_module);
-    
+    modules.AddModule(agitator_module);
+
     // initialize modules
     modules.Initialize();
 
