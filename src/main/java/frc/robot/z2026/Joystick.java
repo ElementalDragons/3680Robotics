@@ -37,11 +37,12 @@ public class Joystick {
 
     m_controller.RegisterBinaryButtonConsumer(ButtonName.TopButton, shooter::ApplyInverse);
     m_controller.RegisterBinaryButtonConsumer(ButtonName.LeftButton, feeder::ApplyValue);
+    m_controller.RegisterBinaryButtonConsumer(ButtonName.LeftButton, agitator::ApplyValue);
     m_controller.RegisterBinaryButtonConsumer(ButtonName.RightButton, intake::ApplyValue);
     m_controller.RegisterBinaryButtonConsumer(ButtonName.BottomButton, feeder::ApplyInverse);
 
     // agitator: simple on/off toggle - press once to start, press again to stop
-    m_controller.RegisterBinaryButtonConsumer(ButtonName.RightShoulderButton, agitator::Toggle);
+    m_controller.RegisterBinaryButtonConsumer(ButtonName.RightShoulderButton, agitator::ApplyInverse);
     // System.out.printf("Joystick: shootSequence %s found for button mapping\n", shootSequence != null ? shootSequence.GetLabel() : "not");
     // if (shootSequence != null) // will be null in Autonomous Mode
     //   m_controller.RegisterBinaryButtonConsumer(ButtonName.RightButton, shootSequence::InitializeViaButton);
