@@ -61,8 +61,8 @@ public class Robot extends TimedRobot {
   final String codeBuildVersion = "2026.01.22";
   boolean initialized = false;
 
-  // final SparkFlex can_drive_lf = new SparkFlex(6, MotorType.kBrushless);
-  final SparkMax can_drive_lf = null;
+  final SparkFlex can_drive_lf = new SparkFlex(6, MotorType.kBrushless);
+  //final SparkMax can_drive_lf = null;
   final SparkMax can_steer_lf = new SparkMax(2,MotorType.kBrushless);
 
   final SparkFlex can_drive_rf = new SparkFlex(7, MotorType.kBrushless);
