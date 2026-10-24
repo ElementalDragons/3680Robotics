@@ -103,7 +103,7 @@ public class Robot extends TimedRobot {
   final boolean isFieldOriented = true;
 
   SingleMotorModule shooter_module = new SingleMotorModule("shooter", can_shooter, 1.60, false, null, null, enc_shooter, 1, 0.5, 0, 0, true);
-  SingleMotorModule intake_module = new SingleMotorModule("intake", can_intake, 1.0, false, null, null, null, 1, 0.5, 0, 0, false);
+  SingleMotorModule intake_module = new SingleMotorModule("intake", can_intake, 0.5, false, null, null, null, 1, 0.5, 0, 0, false);
   SingleMotorModule feeder_module = new SingleMotorModule("feeder", can_feeder, 1.60, false, null, null, null, 1, 0.5, 0, 0, false);
   SingleMotorModule agitator_module = new SingleMotorModule("agitator", can_agitator, 1.0, false, null, null, null, 1, 0.5, 0, 0, false);
   
