@@ -12,7 +12,7 @@ This expands the setup comment above `swerveDriveModule` in `src/main/java/frc/r
 ## Current per-corner values
 | Corner | Drive CAN | Steer CAN | Rotation offset (rad) |
 |--------|-----------|-----------|------------------------|
-| LeftFront | 6 (**disabled / null**) | 2 | 4.71 |
+| LeftFront | 6 (drive encoder `enc_drive_lf` still `null`) | 2 | 4.71 |
 | RightFront | 7 | 3 | 0 |
 | LeftRear | 8 | 4 | 3.14 |
 | RightRear | 9 | 5 | 1.57 |

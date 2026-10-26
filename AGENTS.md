@@ -32,7 +32,7 @@ This file is the starting point for any AI agent (Claude Code, Codex, Copilot, C
 | `misc/` | `GameController` (Xbox / PS4 / FlightStick / Switch2Pro mapping), `Utility` (units, alliance flipping, geometry), `Elastic` (dashboard tab switching and notifications). |
 
 ## How the robot loop works (z2026)
-1. `robotInit()` builds a `ModuleController` around `SwerveDriveModule` and calls `AddModule(...)` for `shooter`, `intake` and `feeder`. It then calls `modules.Initialize()`, publishes choosers and autos, and finally calls `DashboardTelemetry.Initialize(...)`.
+1. `robotInit()` builds a `ModuleController` around `SwerveDriveModule` and calls `AddModule(...)` for `shooter`, `intake`, `feeder` and `agitator`. It then calls `modules.Initialize()`, publishes choosers and autos, and finally calls `DashboardTelemetry.Initialize(...)`.
 2. Every mode init calls `commonInit()`. That registers button-mapped autos, builds the `GameController`, then calls `ActionPoses.Initialize` and `Joystick.InitializeButtonMappings`. **This order matters.** The start pose is set once per match.
 3. Teleop each tick runs `m_controller.ProcessButtons()`, then button-mapped autos `Update()`, then `modules.ProcessState(false)`.
 4. Auto each tick runs `currentAutoMode.Update()`, then `modules.ProcessState(true)`. The auto is picked by name from `SmartDashboard/Auto Selector`.
@@ -50,10 +50,11 @@ This file is the starting point for any AI agent (Claude Code, Codex, Copilot, C
 | Device | CAN ID | Notes |
 |--------|--------|-------|
 | Steer LF / RF / LR / RR | 2 / 3 / 4 / 5 | SparkMax with absolute encoders. Offsets are 4.71 / 0 / 3.14 / 1.57 rad. |
-| Drive LF / RF / LR / RR | 6 / 7 / 8 / 9 | SparkFlex. **LF drive is currently `null` (commented out).** |
-| Intake | 10 | SparkMax, brushless |
+| Drive LF / RF / LR / RR | 6 / 7 / 8 / 9 | SparkFlex. **LF drive encoder (`enc_drive_lf`) is still `null`**, so LF odometry has no wheel encoder. |
+| Intake | 10 | SparkMax, brushless, drive speed 0.5 |
 | Shooter | 11 | SparkMax, brushless, velocity mode with encoder |
 | Feeder | 12 | SparkMax, **brushed** |
+| Agitator | 13 | SparkMax, **brushed**, module ID `agitator`, bound to RightShoulderButton |
 
 - **Gyro:** NavX (`AHRSGyro`).
 - **Vision:** one Limelight (`limelight.local`, name `""`) used by `LimeLightPositioner`, plus PhotonVision (`photonvision.local`, port 5800 forwarded).

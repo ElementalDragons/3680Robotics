@@ -38,6 +38,7 @@ The repo does **not** use WPILib command-based. Every mechanism is a `RobotModul
 6. Put tuning numbers in `z2026/Constants.java`.
 
 ## Gotchas
+- `SingleMotorModule.Toggle(pressed)` flips the motor on/off on each press (rising edge) and keeps it running via `sustainedDriveSpeed`. Bind it like `ApplyValue`. Note: the agitator in `z2026/Joystick.java` is commented as a toggle but is bound to `agitator::ApplyValue` (hold-to-run).
 - `ApplyValue` / `ApplyInverse` add drive speed **for the tick the button is held**, then `currentDriveSpeed` resets to `sustainedDriveSpeed`. Holding the button keeps the motor running.
 - Velocity mode (`UseVelocity = true`) uses `AutoTarget(measurement)` as RPM. Example: shooter `Action.Feed` = -3000 RPM, which is still a TODO to tune.
 - Limit switches stop the motor **and** abandon the target, so an `AwaitTarget` never deadlocks.
