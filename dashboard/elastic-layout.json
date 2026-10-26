@@ -8,8 +8,29 @@
         "layouts": [],
         "containers": [
           {
-            "title": "Auto Choices",
+            "title": "Field",
             "x": 0.0,
+            "y": 0.0,
+            "width": 240.0,
+            "height": 480.0,
+            "type": "Field",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.79,
+              "robot_length": 0.79,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": -90.0,
+              "robot_color": 4294198070,
+              "trajectory_color": 4294967295,
+              "show_robot_outside_widget": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Auto Choices",
+            "x": 240.0,
             "y": 0.0,
             "width": 320.0,
             "height": 240.0,
@@ -21,8 +42,51 @@
             }
           },
           {
+            "title": "Speed Mod",
+            "x": 240.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 80.0,
+            "type": "Number Slider",
+            "properties": {
+              "topic": "/SmartDashboard/DB/Slider 0",
+              "data_type": "double",
+              "min_value": 0.0,
+              "max_value": 1.0,
+              "divisions": 5,
+              "update_continuously": false,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Station Number",
+            "x": 240.0,
+            "y": 320.0,
+            "width": 160.0,
+            "height": 80.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/FMSInfo/StationNumber",
+              "data_type": "int",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Code Version",
+            "x": 400.0,
+            "y": 320.0,
+            "width": 160.0,
+            "height": 80.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/DB/String 5",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
             "title": "FMS Info",
-            "x": 320.0,
+            "x": 560.0,
             "y": 0.0,
             "width": 240.0,
             "height": 80.0,
@@ -34,7 +98,7 @@
           },
           {
             "title": "Match Number",
-            "x": 320.0,
+            "x": 560.0,
             "y": 80.0,
             "width": 240.0,
             "height": 80.0,
@@ -47,7 +111,7 @@
           },
           {
             "title": "Alliance (red = Red)",
-            "x": 320.0,
+            "x": 560.0,
             "y": 160.0,
             "width": 240.0,
             "height": 80.0,
@@ -63,35 +127,9 @@
             }
           },
           {
-            "title": "Station Number",
-            "x": 560.0,
-            "y": 0.0,
-            "width": 160.0,
-            "height": 80.0,
-            "type": "Large Text Display",
-            "properties": {
-              "topic": "/FMSInfo/StationNumber",
-              "data_type": "int",
-              "period": 0.06
-            }
-          },
-          {
-            "title": "Code Version",
-            "x": 720.0,
-            "y": 0.0,
-            "width": 160.0,
-            "height": 80.0,
-            "type": "Large Text Display",
-            "properties": {
-              "topic": "/SmartDashboard/DB/String 5",
-              "data_type": "string",
-              "period": 0.06
-            }
-          },
-          {
             "title": "Battery Voltage",
             "x": 560.0,
-            "y": 80.0,
+            "y": 240.0,
             "width": 320.0,
             "height": 80.0,
             "type": "Voltage View",
@@ -109,7 +147,7 @@
           {
             "title": "DS Attached",
             "x": 560.0,
-            "y": 160.0,
+            "y": 320.0,
             "width": 160.0,
             "height": 80.0,
             "type": "Boolean Box",
@@ -126,51 +164,13 @@
           {
             "title": "Vision Health",
             "x": 720.0,
-            "y": 160.0,
+            "y": 320.0,
             "width": 160.0,
             "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Vision Health",
               "data_type": "string",
-              "period": 0.06
-            }
-          },
-          {
-            "title": "Speed Mod",
-            "x": 0.0,
-            "y": 240.0,
-            "width": 320.0,
-            "height": 80.0,
-            "type": "Number Slider",
-            "properties": {
-              "topic": "/SmartDashboard/DB/Slider 0",
-              "data_type": "double",
-              "min_value": 0.0,
-              "max_value": 1.0,
-              "divisions": 5,
-              "update_continuously": false,
-              "period": 0.06
-            }
-          },
-          {
-            "title": "Field",
-            "x": 320.0,
-            "y": 240.0,
-            "width": 480.0,
-            "height": 240.0,
-            "type": "Field",
-            "properties": {
-              "topic": "/SmartDashboard/Dashboard/Field",
-              "field_game": "Rebuilt",
-              "robot_width": 0.79,
-              "robot_length": 0.79,
-              "show_other_objects": true,
-              "show_trajectories": true,
-              "field_rotation": 0.0,
-              "robot_color": 4294198070,
-              "trajectory_color": 4294967295,
-              "show_robot_outside_widget": true,
               "period": 0.06
             }
           },
@@ -235,31 +235,10 @@
             }
           },
           {
-            "title": "Field",
-            "x": 640.0,
-            "y": 0.0,
-            "width": 480.0,
-            "height": 240.0,
-            "type": "Field",
-            "properties": {
-              "topic": "/SmartDashboard/Dashboard/Field",
-              "field_game": "Rebuilt",
-              "robot_width": 0.79,
-              "robot_length": 0.79,
-              "show_other_objects": true,
-              "show_trajectories": true,
-              "field_rotation": 0.0,
-              "robot_color": 4294198070,
-              "trajectory_color": 4294967295,
-              "show_robot_outside_widget": true,
-              "period": 0.06
-            }
-          },
-          {
             "title": "Match Time",
             "x": 640.0,
-            "y": 240.0,
-            "width": 240.0,
+            "y": 0.0,
+            "width": 320.0,
             "height": 160.0,
             "type": "Match Time",
             "properties": {
@@ -273,8 +252,8 @@
           },
           {
             "title": "Battery Voltage",
-            "x": 880.0,
-            "y": 240.0,
+            "x": 640.0,
+            "y": 160.0,
             "width": 320.0,
             "height": 80.0,
             "type": "Voltage View",
@@ -291,8 +270,8 @@
           },
           {
             "title": "Browned Out",
-            "x": 880.0,
-            "y": 320.0,
+            "x": 640.0,
+            "y": 240.0,
             "width": 160.0,
             "height": 80.0,
             "type": "Boolean Box",
@@ -308,14 +287,35 @@
           },
           {
             "title": "Vision Health",
-            "x": 1040.0,
-            "y": 320.0,
+            "x": 800.0,
+            "y": 240.0,
             "width": 160.0,
             "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Vision Health",
               "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Field",
+            "x": 960.0,
+            "y": 0.0,
+            "width": 240.0,
+            "height": 480.0,
+            "type": "Field",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.79,
+              "robot_length": 0.79,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": -90.0,
+              "robot_color": 4294198070,
+              "trajectory_color": 4294967295,
+              "show_robot_outside_widget": true,
               "period": 0.06
             }
           },
@@ -417,31 +417,10 @@
             }
           },
           {
-            "title": "Field",
-            "x": 640.0,
-            "y": 0.0,
-            "width": 480.0,
-            "height": 240.0,
-            "type": "Field",
-            "properties": {
-              "topic": "/SmartDashboard/Dashboard/Field",
-              "field_game": "Rebuilt",
-              "robot_width": 0.79,
-              "robot_length": 0.79,
-              "show_other_objects": true,
-              "show_trajectories": true,
-              "field_rotation": 0.0,
-              "robot_color": 4294198070,
-              "trajectory_color": 4294967295,
-              "show_robot_outside_widget": true,
-              "period": 0.06
-            }
-          },
-          {
             "title": "Match Time",
             "x": 640.0,
-            "y": 240.0,
-            "width": 240.0,
+            "y": 0.0,
+            "width": 320.0,
             "height": 160.0,
             "type": "Match Time",
             "properties": {
@@ -455,8 +434,8 @@
           },
           {
             "title": "Current Shift",
-            "x": 880.0,
-            "y": 240.0,
+            "x": 640.0,
+            "y": 160.0,
             "width": 160.0,
             "height": 160.0,
             "type": "Large Text Display",
@@ -468,8 +447,8 @@
           },
           {
             "title": "Hub Active",
-            "x": 1040.0,
-            "y": 240.0,
+            "x": 800.0,
+            "y": 160.0,
             "width": 160.0,
             "height": 160.0,
             "type": "Boolean Box",
@@ -480,6 +459,27 @@
               "false_color": 4294198070,
               "true_icon": "None",
               "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Field",
+            "x": 960.0,
+            "y": 0.0,
+            "width": 240.0,
+            "height": 480.0,
+            "type": "Field",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.79,
+              "robot_length": 0.79,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": -90.0,
+              "robot_color": 4294198070,
+              "trajectory_color": 4294967295,
+              "show_robot_outside_widget": true,
               "period": 0.06
             }
           },
@@ -536,6 +536,19 @@
             }
           },
           {
+            "title": "Vision Health",
+            "x": 640.0,
+            "y": 320.0,
+            "width": 160.0,
+            "height": 80.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Vision Health",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
             "title": "Robot Speed (m/s)",
             "x": 0.0,
             "y": 320.0,
@@ -582,19 +595,6 @@
             "type": "FMSInfo",
             "properties": {
               "topic": "/FMSInfo",
-              "period": 0.06
-            }
-          },
-          {
-            "title": "Vision Health",
-            "x": 560.0,
-            "y": 400.0,
-            "width": 160.0,
-            "height": 80.0,
-            "type": "Large Text Display",
-            "properties": {
-              "topic": "/SmartDashboard/Dashboard/Vision Health",
-              "data_type": "string",
               "period": 0.06
             }
           }
