@@ -1,6 +1,6 @@
 {
   "version": 1.0,
-  "grid_size": 128,
+  "grid_size": 80,
   "tabs": [
     {
       "name": "Prematch",
@@ -11,8 +11,8 @@
             "title": "Auto Choices",
             "x": 0.0,
             "y": 0.0,
-            "width": 512.0,
-            "height": 384.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "ComboBox Chooser",
             "properties": {
               "topic": "/SmartDashboard/Auto Choices",
@@ -22,10 +22,10 @@
           },
           {
             "title": "FMS Info",
-            "x": 512.0,
+            "x": 320.0,
             "y": 0.0,
-            "width": 384.0,
-            "height": 128.0,
+            "width": 240.0,
+            "height": 80.0,
             "type": "FMSInfo",
             "properties": {
               "topic": "/FMSInfo",
@@ -34,10 +34,10 @@
           },
           {
             "title": "Match Number",
-            "x": 512.0,
-            "y": 128.0,
-            "width": 384.0,
-            "height": 128.0,
+            "x": 320.0,
+            "y": 80.0,
+            "width": 240.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/FMSInfo/MatchNumber",
@@ -47,10 +47,10 @@
           },
           {
             "title": "Alliance (red = Red)",
-            "x": 512.0,
-            "y": 256.0,
-            "width": 384.0,
-            "height": 128.0,
+            "x": 320.0,
+            "y": 160.0,
+            "width": 240.0,
+            "height": 80.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/FMSInfo/IsRedAlliance",
@@ -64,10 +64,10 @@
           },
           {
             "title": "Station Number",
-            "x": 896.0,
+            "x": 560.0,
             "y": 0.0,
-            "width": 256.0,
-            "height": 128.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/FMSInfo/StationNumber",
@@ -77,10 +77,10 @@
           },
           {
             "title": "Code Version",
-            "x": 1152.0,
+            "x": 720.0,
             "y": 0.0,
-            "width": 256.0,
-            "height": 128.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/DB/String 5",
@@ -90,10 +90,10 @@
           },
           {
             "title": "Battery Voltage",
-            "x": 896.0,
-            "y": 128.0,
-            "width": 512.0,
-            "height": 128.0,
+            "x": 560.0,
+            "y": 80.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "Voltage View",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Battery Voltage",
@@ -108,10 +108,10 @@
           },
           {
             "title": "DS Attached",
-            "x": 896.0,
-            "y": 256.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 560.0,
+            "y": 160.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/DS Attached",
@@ -125,10 +125,10 @@
           },
           {
             "title": "Vision Health",
-            "x": 1152.0,
-            "y": 256.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 720.0,
+            "y": 160.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Vision Health",
@@ -139,9 +139,9 @@
           {
             "title": "Speed Mod",
             "x": 0.0,
-            "y": 384.0,
-            "width": 512.0,
-            "height": 128.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "Number Slider",
             "properties": {
               "topic": "/SmartDashboard/DB/Slider 0",
@@ -155,10 +155,10 @@
           },
           {
             "title": "Field",
-            "x": 512.0,
-            "y": 384.0,
-            "width": 768.0,
-            "height": 384.0,
+            "x": 320.0,
+            "y": 240.0,
+            "width": 480.0,
+            "height": 240.0,
             "type": "Field",
             "properties": {
               "topic": "/SmartDashboard/Field",
@@ -176,10 +176,10 @@
           },
           {
             "title": "Front Camera",
-            "x": 1408.0,
+            "x": 880.0,
             "y": 0.0,
-            "width": 512.0,
-            "height": 384.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "Camera Stream",
             "properties": {
               "topic": "/CameraPublisher/Front Camera",
@@ -189,10 +189,10 @@
           },
           {
             "title": "Back Camera",
-            "x": 1408.0,
-            "y": 384.0,
-            "width": 512.0,
-            "height": 384.0,
+            "x": 880.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "Camera Stream",
             "properties": {
               "topic": "/CameraPublisher/Back Camera",
@@ -212,8 +212,8 @@
             "title": "Front Camera",
             "x": 0.0,
             "y": 0.0,
-            "width": 512.0,
-            "height": 384.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "Camera Stream",
             "properties": {
               "topic": "/CameraPublisher/Front Camera",
@@ -223,10 +223,10 @@
           },
           {
             "title": "Back Camera",
-            "x": 512.0,
+            "x": 320.0,
             "y": 0.0,
-            "width": 512.0,
-            "height": 384.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "Camera Stream",
             "properties": {
               "topic": "/CameraPublisher/Back Camera",
@@ -236,10 +236,10 @@
           },
           {
             "title": "Field",
-            "x": 1024.0,
+            "x": 640.0,
             "y": 0.0,
-            "width": 768.0,
-            "height": 384.0,
+            "width": 480.0,
+            "height": 240.0,
             "type": "Field",
             "properties": {
               "topic": "/SmartDashboard/Field",
@@ -257,10 +257,10 @@
           },
           {
             "title": "Match Time",
-            "x": 1024.0,
-            "y": 384.0,
-            "width": 384.0,
-            "height": 256.0,
+            "x": 640.0,
+            "y": 240.0,
+            "width": 240.0,
+            "height": 160.0,
             "type": "Match Time",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Match Time",
@@ -273,10 +273,10 @@
           },
           {
             "title": "Battery Voltage",
-            "x": 1408.0,
-            "y": 384.0,
-            "width": 512.0,
-            "height": 128.0,
+            "x": 880.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "Voltage View",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Battery Voltage",
@@ -291,10 +291,10 @@
           },
           {
             "title": "Browned Out",
-            "x": 1408.0,
-            "y": 512.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 880.0,
+            "y": 320.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Browned Out",
@@ -308,10 +308,10 @@
           },
           {
             "title": "Vision Health",
-            "x": 1664.0,
-            "y": 512.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 1040.0,
+            "y": 320.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Vision Health",
@@ -322,9 +322,9 @@
           {
             "title": "FMS Info",
             "x": 0.0,
-            "y": 384.0,
-            "width": 512.0,
-            "height": 128.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "FMSInfo",
             "properties": {
               "topic": "/FMSInfo",
@@ -333,10 +333,10 @@
           },
           {
             "title": "Auto Selected",
-            "x": 512.0,
-            "y": 384.0,
-            "width": 512.0,
-            "height": 128.0,
+            "x": 320.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Auto Selector",
@@ -347,9 +347,9 @@
           {
             "title": "Robot Speed (m/s)",
             "x": 0.0,
-            "y": 512.0,
-            "width": 384.0,
-            "height": 384.0,
+            "y": 320.0,
+            "width": 240.0,
+            "height": 240.0,
             "type": "Radial Gauge",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Robot Speed",
@@ -367,10 +367,10 @@
           },
           {
             "title": "FMS Attached",
-            "x": 384.0,
-            "y": 512.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 240.0,
+            "y": 320.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/FMS Attached",
@@ -394,8 +394,8 @@
             "title": "Front Camera",
             "x": 0.0,
             "y": 0.0,
-            "width": 512.0,
-            "height": 384.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "Camera Stream",
             "properties": {
               "topic": "/CameraPublisher/Front Camera",
@@ -405,10 +405,10 @@
           },
           {
             "title": "Back Camera",
-            "x": 512.0,
+            "x": 320.0,
             "y": 0.0,
-            "width": 512.0,
-            "height": 384.0,
+            "width": 320.0,
+            "height": 240.0,
             "type": "Camera Stream",
             "properties": {
               "topic": "/CameraPublisher/Back Camera",
@@ -418,10 +418,10 @@
           },
           {
             "title": "Field",
-            "x": 1024.0,
+            "x": 640.0,
             "y": 0.0,
-            "width": 768.0,
-            "height": 384.0,
+            "width": 480.0,
+            "height": 240.0,
             "type": "Field",
             "properties": {
               "topic": "/SmartDashboard/Field",
@@ -439,10 +439,10 @@
           },
           {
             "title": "Match Time",
-            "x": 1024.0,
-            "y": 384.0,
-            "width": 384.0,
-            "height": 256.0,
+            "x": 640.0,
+            "y": 240.0,
+            "width": 240.0,
+            "height": 160.0,
             "type": "Match Time",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Match Time",
@@ -455,10 +455,10 @@
           },
           {
             "title": "Current Shift",
-            "x": 1408.0,
-            "y": 384.0,
-            "width": 256.0,
-            "height": 256.0,
+            "x": 880.0,
+            "y": 240.0,
+            "width": 160.0,
+            "height": 160.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Current Shift",
@@ -468,10 +468,10 @@
           },
           {
             "title": "Hub Active",
-            "x": 1664.0,
-            "y": 384.0,
-            "width": 256.0,
-            "height": 256.0,
+            "x": 1040.0,
+            "y": 240.0,
+            "width": 160.0,
+            "height": 160.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Hub Active",
@@ -486,9 +486,9 @@
           {
             "title": "Battery Voltage",
             "x": 0.0,
-            "y": 384.0,
-            "width": 512.0,
-            "height": 128.0,
+            "y": 240.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "Voltage View",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Battery Voltage",
@@ -503,10 +503,10 @@
           },
           {
             "title": "Browned Out",
-            "x": 512.0,
-            "y": 384.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 320.0,
+            "y": 240.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Browned Out",
@@ -520,10 +520,10 @@
           },
           {
             "title": "Field Oriented",
-            "x": 768.0,
-            "y": 384.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 480.0,
+            "y": 240.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Boolean Box",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Field Oriented",
@@ -538,9 +538,9 @@
           {
             "title": "Robot Speed (m/s)",
             "x": 0.0,
-            "y": 512.0,
-            "width": 384.0,
-            "height": 384.0,
+            "y": 320.0,
+            "width": 240.0,
+            "height": 240.0,
             "type": "Radial Gauge",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Robot Speed",
@@ -558,10 +558,10 @@
           },
           {
             "title": "Speed Mod",
-            "x": 384.0,
-            "y": 512.0,
-            "width": 512.0,
-            "height": 128.0,
+            "x": 240.0,
+            "y": 320.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "Number Slider",
             "properties": {
               "topic": "/SmartDashboard/DB/Slider 0",
@@ -575,10 +575,10 @@
           },
           {
             "title": "FMS Info",
-            "x": 384.0,
-            "y": 640.0,
-            "width": 512.0,
-            "height": 128.0,
+            "x": 240.0,
+            "y": 400.0,
+            "width": 320.0,
+            "height": 80.0,
             "type": "FMSInfo",
             "properties": {
               "topic": "/FMSInfo",
@@ -587,10 +587,10 @@
           },
           {
             "title": "Vision Health",
-            "x": 896.0,
-            "y": 640.0,
-            "width": 256.0,
-            "height": 128.0,
+            "x": 560.0,
+            "y": 400.0,
+            "width": 160.0,
+            "height": 80.0,
             "type": "Large Text Display",
             "properties": {
               "topic": "/SmartDashboard/Dashboard/Vision Health",

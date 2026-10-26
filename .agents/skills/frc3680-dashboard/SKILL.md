@@ -43,5 +43,5 @@ description: >
 - **Add a value:** add a `SmartDashboard.put...(prefix + "Name", value)` in `DashboardTelemetry.Periodic()`. Then add a widget for `/SmartDashboard/Dashboard/Name` to `dashboard/elastic-layout.json`, or add it in Elastic and re-export (File → Save Layout).
 - **Change a camera:** edit the `*CameraUrl` constants. Limelight streams on port 5800. PhotonVision streams camera N on 1181 + 2N (raw) and 1182 + 2N (processed). Confirm in each camera's web UI.
 - **Send a driver popup:** `Elastic.sendNotification(new Elastic.Notification(Elastic.NotificationLevel.WARNING, "Title", "Body"));`
-- **Layout grid:** Elastic uses 128 px cells and x/y/width/height in pixels. Keep widgets from overlapping; the current layout is 15 × 7 cells.
+- **Layout grid:** the layout uses 80 px cells (`grid_size` 80) and x/y/width/height in pixels. Keep widgets from overlapping; the current layout is 15 × 7 cells (1200 × 560 px), sized to fit a 1080p screen above a docked Driver Station.
 - Don't call `positioner.IsHealthy()` or other stateful methods from telemetry. Use getters only (e.g. `GetHealthReason()`).
