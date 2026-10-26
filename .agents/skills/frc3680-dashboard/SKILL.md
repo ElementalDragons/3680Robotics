@@ -25,7 +25,8 @@ description: >
 ## Keys
 | Topic | Type | Source |
 |-------|------|--------|
-| `/SmartDashboard/Field` | Field2d | `SwerveDriveModule` (robot pose) |
+| `/SmartDashboard/Dashboard/Field` | Field2d | `DashboardTelemetry`: robot pose every tick in every mode, plus `Vision` (Limelight estimate) and `Start` (start pose, while disabled) ghosts. **The layout uses this one.** |
+| `/SmartDashboard/Field` | Field2d | `SwerveDriveModule`; only updates while enabled |
 | `/CameraPublisher/Front Camera` | camera | Limelight, `http://limelight.local:5800/stream.mjpg` |
 | `/CameraPublisher/Back Camera` | camera | PhotonVision, `http://photonvision.local:1182/stream.mjpg` |
 | `/SmartDashboard/Auto Choices` | chooser | `DashboardTelemetry`; copies the selection into `Auto Selector` |

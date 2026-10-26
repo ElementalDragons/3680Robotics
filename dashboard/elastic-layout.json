@@ -161,7 +161,7 @@
             "height": 240.0,
             "type": "Field",
             "properties": {
-              "topic": "/SmartDashboard/Field",
+              "topic": "/SmartDashboard/Dashboard/Field",
               "field_game": "Rebuilt",
               "robot_width": 0.79,
               "robot_length": 0.79,
@@ -242,7 +242,7 @@
             "height": 240.0,
             "type": "Field",
             "properties": {
-              "topic": "/SmartDashboard/Field",
+              "topic": "/SmartDashboard/Dashboard/Field",
               "field_game": "Rebuilt",
               "robot_width": 0.79,
               "robot_length": 0.79,
@@ -424,7 +424,7 @@
             "height": 240.0,
             "type": "Field",
             "properties": {
-              "topic": "/SmartDashboard/Field",
+              "topic": "/SmartDashboard/Dashboard/Field",
               "field_game": "Rebuilt",
               "robot_width": 0.79,
               "robot_length": 0.79,

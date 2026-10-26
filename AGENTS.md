@@ -63,7 +63,7 @@ This file is the starting point for any AI agent (Claude Code, Codex, Copilot, C
 ## Dashboard / NetworkTables keys
 - The driver dashboard is **Elastic**, using [dashboard/elastic-layout.json](dashboard/elastic-layout.json). Setup is in [dashboard/README.md](dashboard/README.md).
 - Keys the code publishes:
-  - `SmartDashboard/Field`: Field2d with the robot pose.
+  - `SmartDashboard/Dashboard/Field`: Field2d with the robot pose (every tick, all modes), the vision estimate and the start pose. `SmartDashboard/Field` is the drive module's own copy, which only updates while enabled.
   - `SmartDashboard/Auto List`: all autos.
   - `SmartDashboard/Auto Choices`: the chooser.
   - `SmartDashboard/Auto Selector`: the auto that will run.

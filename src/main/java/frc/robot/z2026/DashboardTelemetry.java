@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.misc.Elastic;
@@ -50,6 +51,10 @@ public class DashboardTelemetry {
   static Pose3d lastPose = null;
   static double lastPoseTime = 0;
 
+  // our own field, published every tick in every mode; SwerveDriveModule's "Field" only updates while enabled
+  static final Field2d field = new Field2d();
+  static String lastStartKey = null;
+
   // Call at the end of robotInit, after AutoModes.Initialize has published "Auto List".
   public static void Initialize(ModuleController Modules, Positioner Positioner) {
     modules = Modules;
@@ -59,6 +64,8 @@ public class DashboardTelemetry {
     CameraServer.addCamera(new HttpCamera(backCameraName, backCameraUrl, HttpCameraKind.kMJPGStreamer));
 
     InitializeAutoChooser();
+
+    SmartDashboard.putData(prefix + "Field", field);
   }
 
   // Elastic ComboBox Chooser for the autos in "Auto List".  The selection is copied into "Auto Selector",
@@ -114,13 +121,41 @@ public class DashboardTelemetry {
         }
         lastPose = pose;
         lastPoseTime = now;
+
+        field.setRobotPose(pose.toPose2d());
       }
 
       SmartDashboard.putBoolean(prefix + "Field Oriented", modules.GetDriveModule().IsFieldOriented());
     }
 
-    if (positioner != null)
+    UpdateStartPose();
+
+    if (positioner != null) {
       SmartDashboard.putString(prefix + "Vision Health", positioner.GetHealthReason());
+
+      // ghost robot where vision thinks we are; hidden when there's no estimate
+      var visionPose = positioner.GetPoseEstimate();
+      if (visionPose != null && visionPose.getTranslation().getNorm() > 0)
+        field.getObject("Vision").setPose(visionPose.toPose2d());
+      else
+        field.getObject("Vision").setPoses();
+    }
+  }
+
+  // Shows where the robot will start (alliance + station, or the DB/String 6 override) while disabled.
+  // getMyStartPose prints to the console, so only recompute when one of its inputs changes.
+  static void UpdateStartPose() {
+    if (!DriverStation.isDisabled()) {
+      field.getObject("Start").setPoses();
+      lastStartKey = null;
+      return;
+    }
+
+    var startKey = DriverStation.getAlliance().toString() + DriverStation.getLocation().toString() + SmartDashboard.getString("DB/String 6", "0");
+    if (!startKey.equals(lastStartKey)) {
+      field.getObject("Start").setPose(Constants.getMyStartPose().toPose2d());
+      lastStartKey = startKey;
+    }
   }
 
   // Port of YETI's ShiftHandler (yeti-robotics/rebuilt-2026) without AdvantageKit.
