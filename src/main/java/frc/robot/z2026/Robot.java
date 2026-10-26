@@ -201,6 +201,20 @@ public class Robot extends TimedRobot {
         PortForwarder.add(5800, "photonvision.local", 5800);
     // };
 
+    // Elastic dashboard: cameras, auto chooser and match info (see dashboard/README.md)
+    DashboardTelemetry.Initialize(modules, m_positioner);
+  }
+
+  /** This function is called every robot packet, no matter the mode. */
+  @Override
+  public void robotPeriodic() {
+    DashboardTelemetry.Periodic();
+  }
+
+  /** This function is called once each time the robot becomes disabled. */
+  @Override
+  public void disabledInit() {
+    DashboardTelemetry.SelectTab("Prematch");
   }
 
   void commonInit() {
@@ -239,6 +253,7 @@ public class Robot extends TimedRobot {
   /** This function is run once each time the robot enters autonomous mode. */
   @Override
   public void autonomousInit() {
+    DashboardTelemetry.SelectTab("Autonomous");
     commonInit();
     // swerveDriveModule.ResetGyro();
     // swerveDriveModule.ResetEncoders();
@@ -274,6 +289,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopInit() {
+    DashboardTelemetry.SelectTab("Teleoperated");
     commonInit();
 
     // switch back to defined field oriented mode when we start up tele-op; prevents bleedover from auto

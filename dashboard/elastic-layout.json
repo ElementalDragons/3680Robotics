@@ -1,0 +1,605 @@
+{
+  "version": 1.0,
+  "grid_size": 128,
+  "tabs": [
+    {
+      "name": "Prematch",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Auto Choices",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "ComboBox Chooser",
+            "properties": {
+              "topic": "/SmartDashboard/Auto Choices",
+              "sort_options": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "FMS Info",
+            "x": 512.0,
+            "y": 0.0,
+            "width": 384.0,
+            "height": 128.0,
+            "type": "FMSInfo",
+            "properties": {
+              "topic": "/FMSInfo",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Match Number",
+            "x": 512.0,
+            "y": 128.0,
+            "width": 384.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/FMSInfo/MatchNumber",
+              "data_type": "int",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Alliance (red = Red)",
+            "x": 512.0,
+            "y": 256.0,
+            "width": 384.0,
+            "height": 128.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/FMSInfo/IsRedAlliance",
+              "data_type": "boolean",
+              "true_color": 4294198070,
+              "false_color": 4278225649,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Station Number",
+            "x": 896.0,
+            "y": 0.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/FMSInfo/StationNumber",
+              "data_type": "int",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Code Version",
+            "x": 1152.0,
+            "y": 0.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/DB/String 5",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Battery Voltage",
+            "x": 896.0,
+            "y": 128.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Voltage View",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Battery Voltage",
+              "data_type": "double",
+              "min_value": 4.0,
+              "max_value": 13.0,
+              "divisions": 5,
+              "inverted": false,
+              "orientation": "horizontal",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "DS Attached",
+            "x": 896.0,
+            "y": 256.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/DS Attached",
+              "data_type": "boolean",
+              "true_color": 4283215696,
+              "false_color": 4294198070,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Vision Health",
+            "x": 1152.0,
+            "y": 256.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Vision Health",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Speed Mod",
+            "x": 0.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Number Slider",
+            "properties": {
+              "topic": "/SmartDashboard/DB/Slider 0",
+              "data_type": "double",
+              "min_value": 0.0,
+              "max_value": 1.0,
+              "divisions": 5,
+              "update_continuously": false,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Field",
+            "x": 512.0,
+            "y": 384.0,
+            "width": 768.0,
+            "height": 384.0,
+            "type": "Field",
+            "properties": {
+              "topic": "/SmartDashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.79,
+              "robot_length": 0.79,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": 0.0,
+              "robot_color": 4294198070,
+              "trajectory_color": 4294967295,
+              "show_robot_outside_widget": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Front Camera",
+            "x": 1408.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Camera Stream",
+            "properties": {
+              "topic": "/CameraPublisher/Front Camera",
+              "rotation_turns": 0,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Back Camera",
+            "x": 1408.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Camera Stream",
+            "properties": {
+              "topic": "/CameraPublisher/Back Camera",
+              "rotation_turns": 0,
+              "period": 0.06
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Autonomous",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Front Camera",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Camera Stream",
+            "properties": {
+              "topic": "/CameraPublisher/Front Camera",
+              "rotation_turns": 0,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Back Camera",
+            "x": 512.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Camera Stream",
+            "properties": {
+              "topic": "/CameraPublisher/Back Camera",
+              "rotation_turns": 0,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Field",
+            "x": 1024.0,
+            "y": 0.0,
+            "width": 768.0,
+            "height": 384.0,
+            "type": "Field",
+            "properties": {
+              "topic": "/SmartDashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.79,
+              "robot_length": 0.79,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": 0.0,
+              "robot_color": 4294198070,
+              "trajectory_color": 4294967295,
+              "show_robot_outside_widget": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Match Time",
+            "x": 1024.0,
+            "y": 384.0,
+            "width": 384.0,
+            "height": 256.0,
+            "type": "Match Time",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Match Time",
+              "data_type": "double",
+              "time_display_mode": "Minutes and Seconds",
+              "red_start_time": 15,
+              "yellow_start_time": 30,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Battery Voltage",
+            "x": 1408.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Voltage View",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Battery Voltage",
+              "data_type": "double",
+              "min_value": 4.0,
+              "max_value": 13.0,
+              "divisions": 5,
+              "inverted": false,
+              "orientation": "horizontal",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Browned Out",
+            "x": 1408.0,
+            "y": 512.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Browned Out",
+              "data_type": "boolean",
+              "true_color": 4294198070,
+              "false_color": 4283215696,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Vision Health",
+            "x": 1664.0,
+            "y": 512.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Vision Health",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "FMS Info",
+            "x": 0.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "FMSInfo",
+            "properties": {
+              "topic": "/FMSInfo",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Auto Selected",
+            "x": 512.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/Auto Selector",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Robot Speed (m/s)",
+            "x": 0.0,
+            "y": 512.0,
+            "width": 384.0,
+            "height": 384.0,
+            "type": "Radial Gauge",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Robot Speed",
+              "data_type": "double",
+              "start_angle": -140.0,
+              "end_angle": 140.0,
+              "min_value": 0.0,
+              "max_value": 5.0,
+              "number_of_labels": 6,
+              "wrap_value": false,
+              "show_pointer": true,
+              "show_ticks": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "FMS Attached",
+            "x": 384.0,
+            "y": 512.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/FMS Attached",
+              "data_type": "boolean",
+              "true_color": 4283215696,
+              "false_color": 4294198070,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Teleoperated",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Front Camera",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Camera Stream",
+            "properties": {
+              "topic": "/CameraPublisher/Front Camera",
+              "rotation_turns": 0,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Back Camera",
+            "x": 512.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Camera Stream",
+            "properties": {
+              "topic": "/CameraPublisher/Back Camera",
+              "rotation_turns": 0,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Field",
+            "x": 1024.0,
+            "y": 0.0,
+            "width": 768.0,
+            "height": 384.0,
+            "type": "Field",
+            "properties": {
+              "topic": "/SmartDashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.79,
+              "robot_length": 0.79,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": 0.0,
+              "robot_color": 4294198070,
+              "trajectory_color": 4294967295,
+              "show_robot_outside_widget": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Match Time",
+            "x": 1024.0,
+            "y": 384.0,
+            "width": 384.0,
+            "height": 256.0,
+            "type": "Match Time",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Match Time",
+              "data_type": "double",
+              "time_display_mode": "Minutes and Seconds",
+              "red_start_time": 15,
+              "yellow_start_time": 30,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Current Shift",
+            "x": 1408.0,
+            "y": 384.0,
+            "width": 256.0,
+            "height": 256.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Current Shift",
+              "data_type": "string",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Hub Active",
+            "x": 1664.0,
+            "y": 384.0,
+            "width": 256.0,
+            "height": 256.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Hub Active",
+              "data_type": "boolean",
+              "true_color": 4283215696,
+              "false_color": 4294198070,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Battery Voltage",
+            "x": 0.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Voltage View",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Battery Voltage",
+              "data_type": "double",
+              "min_value": 4.0,
+              "max_value": 13.0,
+              "divisions": 5,
+              "inverted": false,
+              "orientation": "horizontal",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Browned Out",
+            "x": 512.0,
+            "y": 384.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Browned Out",
+              "data_type": "boolean",
+              "true_color": 4294198070,
+              "false_color": 4283215696,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Field Oriented",
+            "x": 768.0,
+            "y": 384.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Boolean Box",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Field Oriented",
+              "data_type": "boolean",
+              "true_color": 4283215696,
+              "false_color": 4294198070,
+              "true_icon": "None",
+              "false_icon": "None",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Robot Speed (m/s)",
+            "x": 0.0,
+            "y": 512.0,
+            "width": 384.0,
+            "height": 384.0,
+            "type": "Radial Gauge",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Robot Speed",
+              "data_type": "double",
+              "start_angle": -140.0,
+              "end_angle": 140.0,
+              "min_value": 0.0,
+              "max_value": 5.0,
+              "number_of_labels": 6,
+              "wrap_value": false,
+              "show_pointer": true,
+              "show_ticks": true,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Speed Mod",
+            "x": 384.0,
+            "y": 512.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Number Slider",
+            "properties": {
+              "topic": "/SmartDashboard/DB/Slider 0",
+              "data_type": "double",
+              "min_value": 0.0,
+              "max_value": 1.0,
+              "divisions": 5,
+              "update_continuously": false,
+              "period": 0.06
+            }
+          },
+          {
+            "title": "FMS Info",
+            "x": 384.0,
+            "y": 640.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "FMSInfo",
+            "properties": {
+              "topic": "/FMSInfo",
+              "period": 0.06
+            }
+          },
+          {
+            "title": "Vision Health",
+            "x": 896.0,
+            "y": 640.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Large Text Display",
+            "properties": {
+              "topic": "/SmartDashboard/Dashboard/Vision Health",
+              "data_type": "string",
+              "period": 0.06
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
